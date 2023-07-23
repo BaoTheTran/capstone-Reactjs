@@ -7,9 +7,11 @@ export default class NavBar extends Component {
       <div className=''>
         <nav className="navbar navbar-expand-md navbar-default">
           <div className='container'>
-          <a className="navbar-brand" href="#">
-          <img src="http://ddcinema.vn/Content/Img/logo.png" alt="" />
-        </a>
+          <div className="navbar-brand">
+            <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">
+            <img src="http://ddcinema.vn/Content/Img/logo.png"/>
+            </NavLink>
+          </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon" />
         </button>
