@@ -4,15 +4,16 @@ import {NavLink} from "react-router-dom";
 export default class NavBar extends Component {
   render() {
     return (
-      <div className='container'>
-        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
-        <a className="navbar-brand" href="#">
+      <div className=''>
+        <nav className="navbar navbar-expand-md navbar-default">
+          <div className='container'>
+          <a className="navbar-brand" href="#">
           <img src="http://ddcinema.vn/Content/Img/logo.png" alt="" />
         </a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <div className="collapse navbar-collapse navbar-menu" id="collapsibleNavbar ">
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">Trang Chủ</NavLink>
@@ -38,7 +39,10 @@ export default class NavBar extends Component {
             
           </ul>
         </div>
+          </div>
+       
       </nav>
+        
       </div>
        
 
