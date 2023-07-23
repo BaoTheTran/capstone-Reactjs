@@ -1,0 +1,47 @@
+import React, { Component } from 'react';
+import {NavLink} from "react-router-dom";
+
+export default class NavBar extends Component {
+  render() {
+    return (
+      <div className='container'>
+        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+        <a className="navbar-brand" href="#">
+          <img src="http://ddcinema.vn/Content/Img/logo.png" alt="" />
+        </a>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span className="navbar-toggler-icon" />
+        </button>
+        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">Trang Chủ</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/phim">Phim</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lich-chieu">Lịch Chiếu</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/gia-ve">Giá Vé</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/uu-dai">Ưu Đãi</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/tin-tuc">Tin Tức</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lien-he">Liên Hệ</NavLink>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      </div>
+       
+
+    )
+  }
+}
