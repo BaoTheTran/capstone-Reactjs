@@ -2,10 +2,26 @@ import React, { Component } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import MovieItem from './MovieItems';
+import { connect } from 'react-redux';
+import { actFetchListMovieHomepage } from './duck/actions';
 
 
-export default class HomePage extends Component {
+class HomePage extends Component {
+
+  componentDidMount(){
+    this.props.fetchListMovieHomepage();
+  }
+
+  renderListMovie=()=>{
+    const {data,loading} = this.props;
+    if(loading) return <div>loading...</div>
+    return data?.map((movie)=><MovieItem key={movie.maPhim} movie={movie} />);
+  }
+
+
   render() {
+    console.log(this.props.data);
     return (
     <div>
       <section className='carousel'>
@@ -36,14 +52,36 @@ export default class HomePage extends Component {
                 <ul>
                     <li className="dangchieu_li slide_active">Đang chiếu</li>
                     <li className="sapchieu_li">Sắp chiếu</li>
-                    <li className="chieusom_li">Suất chiếu đặc biệt</li>
                 </ul>
             </div>
             </div>
 
           </div>
       </section>
+      <section id='dangChieu'>
+          <OwlCarousel items={4} margin={8} autoplay ={true} className="owl-theme"  
+        loop >
+              {this.renderListMovie()}
+          </OwlCarousel>
+      </section>
     </div>  
     )
   }
 }
+
+const mapStateToProps =(state)=>{
+  return{
+    loading :state.listMovieHompageReducer.loading,
+    data: state.listMovieHompageReducer.data,
+  }
+};
+
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    fetchListMovieHomepage:()=>{
+      dispatch(actFetchListMovieHomepage());
+    }
+  }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (HomePage);

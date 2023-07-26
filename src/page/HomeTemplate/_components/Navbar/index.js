@@ -8,7 +8,7 @@ export default class NavBar extends Component {
         <nav className="navbar navbar-expand-md navbar-default">
           <div className='container'>
           <div className="navbar-brand">
-            <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">
+            <NavLink  to="/">
             <img src="http://ddcinema.vn/Content/Img/logo.png"/>
             </NavLink>
           </div>
@@ -31,9 +31,6 @@ export default class NavBar extends Component {
             </li>
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/uu-dai">Ưu Đãi</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/tin-tuc">Tin Tức</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lien-he">Liên Hệ</NavLink>

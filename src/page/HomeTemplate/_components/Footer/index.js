@@ -10,7 +10,7 @@ export default class Footer extends Component {
           <div className='row'>
               <div className='col-lg-4 col-md-4 col-sm-4 col-xs-4 footer_item footer_item_img'>
                 <div className="navbar-brand">
-                  <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">
+                  <NavLink to="/">
                   <img src="http://ddcinema.vn/Content/Img/logo.png"/>
                   </NavLink>
                 </div>
@@ -22,7 +22,7 @@ export default class Footer extends Component {
                     <a href=""><i className="fab fa-youtube"></i></a>
                   </div>
                   <div className='hotLine'>
-                    <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lien-he">
+                    <NavLink to="/lien-he">
                     <p><i className="fa fa-hand-point-right"></i>Liên hệ với chúng tôi</p>
                     </NavLink>
                   </div>
