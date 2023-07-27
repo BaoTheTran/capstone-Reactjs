@@ -5,7 +5,7 @@ export default class MovieItem extends Component {
     const {movie} = this.props;
     return (
       <div>
-        <div>
+        <div className='item'>
             <img src={movie.hinhAnh}/>
             <h3 className='title-movie-item'>{movie.tenPhim}</h3>
         </div>
