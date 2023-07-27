@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ModalRegister from '../ModalRegister';
+import ModalLogin from '../ModalLogin';
 
 export default class Contact extends Component {
   render() {
@@ -17,9 +18,11 @@ export default class Contact extends Component {
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                            <a className="login_btn"  href="#" data-toggle="modal" data-target="#myModalLogin">
+
                                 <span><i className="fa fa-key"></i></span>
-                                    Đăng nhập</a>
+                                    Đăng nhập
+                            </a>
                             </li>
                         </ul>
                     </div>
@@ -39,7 +42,9 @@ export default class Contact extends Component {
                 </div>
             </div>
             </div>
+            
             <ModalRegister/>
+            <ModalLogin/>
         </div>
       
 
