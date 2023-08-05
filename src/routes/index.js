@@ -12,10 +12,10 @@ const routes = [
             { path: "lich-chieu", element: lazy(() => import("../page/HomeTemplate/LichChieu")) },
             { path: "gia-ve", element: lazy(() => import("../page/HomeTemplate/giaVe")) },
             { path: "uu-dai", element: lazy(() => import("../page/HomeTemplate/uuDai")) },
-            { path: "tin-tuc", element: lazy(() => import("../page/HomeTemplate/tinTuc")) },
             { path: "lien-he", element: lazy(() => import("../page/HomeTemplate/LienHe")) },
             { path: 'lich-chieu/:id', element: lazy(() => import('../page/HomeTemplate/detailMovie')) },
             { path: "movie-seat", element: lazy(() => import("../page/HomeTemplate/MovieSeat/index")) },
+            // { path: "tin-tuc", element: lazy(() => import("../page/HomeTemplate/tinTuc")) },
         ]
     },
 

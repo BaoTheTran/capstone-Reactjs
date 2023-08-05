@@ -1,5 +1,4 @@
 import React from 'react'
-import Chitiet from './Chitiet'
 
 export default function RenderLichChieu(props) {
     let { item,lichChieu } = props
@@ -26,7 +25,7 @@ export default function RenderLichChieu(props) {
                             <div className='calendar-item'>12:45</div>
                             <div className='calendar-item'>15:45</div>
                         </div> */}
-                        <Chitiet data={lichChieu} />
+                        {/* <Chitiet data={lichChieu} /> */}
                     </div>
 
                 </div>

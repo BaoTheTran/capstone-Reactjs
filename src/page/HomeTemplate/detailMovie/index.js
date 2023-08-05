@@ -3,7 +3,7 @@ import './style.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { actFetchDetailMovie } from './duck/action'
-import Chitiet from '../LichChieu/Chitiet'
+import Chitiet from './Chitiet'
 
 export default function DetailMovie() {
   const params = useParams()
