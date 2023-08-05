@@ -150,3 +150,132 @@ p{
   width: 100%;
   height: 100%;
 }
+
+
+/* HOMEPAGE__CAROUSEL  */
+
+
+.owl-next {
+  position: absolute !important;
+  right: 0px !important;
+  top: 30%;
+  background-color: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important; 
+}
+
+.owl-next span{
+  font-size: 80px;
+  color: grey;
+}
+
+.owl-prev {
+  position: absolute !important;
+  left: 0px !important;
+  top: 30%;
+  background-color: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.owl-prev span{
+  font-size: 80px;
+  color: grey;
+}
+
+.item img{
+  display: block;
+  height: 700px;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.owl-dots{
+  position: absolute;
+  z-index: 15;
+  bottom: 2%;
+  right: 50%;
+}
+
+/* SLIDER MOVIE  */
+
+#slider-movie {
+  padding: 60px 0;
+  margin-top: -10px;
+  background-color: #060c12;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+#slider-movie .heading img {
+  width: 150px;
+}
+
+#slider-movie .heading {
+  position: relative;
+  border-bottom: solid 1px rgba(255,255,255,0.4);
+  padding-bottom: 10px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+#slider-movie .heading ul {
+  list-style-type: none;
+  float: right;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+}
+
+#slider-movie .heading ul li {
+  display: inline;
+  float: left;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 7px;
+  margin-left: 5%;
+}
+
+.my-active{
+  border-bottom: 2px solid #fdb813;
+}
+
+/* MODAL REGISTER  */
+
+.control-label {
+  color: #a9a9a9;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.form-control:focus {
+  border-color: #fdb813 !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.register_send {
+  border: none;
+  font-size: 14px;
+  background-color: #F9C227;
+  color: black;
+  padding: 7px 25px;
+  border-radius: 20px;
+  transition: .3s;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.register_send:hover {
+  background-color: #F9C227;
+  color: #fff;
+}
