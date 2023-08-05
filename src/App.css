@@ -251,7 +251,6 @@ p{
 
 /* MODAL REGISTER  */
 
-
 .control-label {
   color: #a9a9a9;
   font-style: italic;
@@ -279,9 +278,4 @@ p{
 .register_send:hover {
   background-color: #F9C227;
   color: #fff;
-}
-
-/* MODAL LOGIN  */
-.login-change-regis {
-  cursor: pointer;
 }
