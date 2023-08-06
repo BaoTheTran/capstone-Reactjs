@@ -1,9 +1,74 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { actLichChieu } from './duck/action'
+import RenderLichChieu from './renderLichChieu'
+import { Link, useParams } from 'react-router-dom'
+import './style.css'
+import { Tabs } from 'antd';
+import TabPane from 'antd/es/tabs/TabPane'
+import moment, { months } from 'moment/moment'
+import _ from 'lodash'
 
-export default class LichChieu extends Component {
-  render() {
-    return (
-      <div>LichChieu</div>
-    )
+export default function LichChieu() {
+  const dispatch = useDispatch()
+  const params = useParams()
+  const data = useSelector((state) => state.lichChieuReducer.data)
+  const loadding = useSelector((state) => state.lichChieuReducer.loadding)
+  const [tabPosition, setTabPosition] = useState('left');
+
+  useEffect(() => {
+    dispatch(actLichChieu())
+  }, [])
+
+  const renderHeThongRap = () => {
+    return data?.map((heThongRap, index) => {
+      return <TabPane tab={<img style={{ height: '50%', width: '100%', maxWidth: '50px' }} src={heThongRap.logo} />} key={index}>
+        <Tabs tabPosition={tabPosition}>
+          {heThongRap?.lstCumRap.map((cumRap, index) => {
+            return <TabPane tab={
+              <div className='pb-3'>
+                <img src={cumRap.hinhAnh} alt='' style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                <span className='pl-4'>{cumRap.tenCumRap}</span> - <span>{cumRap.diaChi}</span>
+              </div>
+            } key={index}>
+              <Tabs tabPosition={tabPosition}>
+                {cumRap?.danhSachPhim.slice(0,6).map((phim, index) => {
+                  return <TabPane tab={
+                    <div>
+                      <img style={{ height: '50%', width: '100%', maxWidth: '50px', display: 'inline-block' }} src={phim.hinhAnh} />
+                      <span style={{ padding: '10px' }}>{phim.tenPhim}</span>
+                    </div>
+                  } key={index}>
+                    <div className='row'>
+                      {phim?.lstLichChieuTheoPhim.slice(0, 6).map((xuatChieu, index) => {
+                        return <Link className='col-md-5 calendar-item' to='/movie-seat'>
+                          {moment(xuatChieu.NgayChieuGioChieu).format('DD/MM/YYYY')} - {moment(xuatChieu.NgayChieuGioChieu).format('HH:MM A')}
+                        </Link>
+                      })}
+                    </div>
+                  </TabPane>
+                })}
+              </Tabs>
+            </TabPane>
+          })}
+        </Tabs>
+      </TabPane>
+    })
   }
+  if (loadding) return <div>loadding ...</div>
+  console.log(data);
+  return (
+    <>
+      <div>
+        <h2 className='text-center py-3'>Lịch chiếu</h2>
+      </div>
+
+      <hr />
+
+      <Tabs
+        tabPosition={tabPosition}>
+        {renderHeThongRap()}
+      </Tabs>
+    </>
+  )
 }
