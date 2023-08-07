@@ -21,7 +21,7 @@ export default class NavBar extends Component {
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">Trang Chủ</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/phim">Phim</NavLink>
+              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/dang-chieu">Phim</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lich-chieu">Lịch Chiếu</NavLink>
