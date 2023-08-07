@@ -1,6 +1,7 @@
 import {Route} from "react-router-dom";
 import {lazy} from "react";
 
+
 const routes=[
     {
         path: "",

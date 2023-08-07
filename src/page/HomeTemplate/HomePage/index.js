@@ -59,9 +59,10 @@ class HomePage extends Component {
           </div>
       </section>
       <section id='dangChieu'>
+      {this.renderListMovie()}
           <OwlCarousel items={4} margin={8} autoplay ={true} className="owl-theme"  
         loop >
-              {this.renderListMovie()}
+              
           </OwlCarousel>
       </section>
     </div>  
