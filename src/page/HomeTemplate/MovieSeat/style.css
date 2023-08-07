@@ -1,97 +1,63 @@
 .header-seat {
     justify-content: space-around !important;
     margin: 0 350px;
+    text-align: center;
 }
 
 .seat-none {
-    padding: 15px;
-    height: 20px;
-    width: 20px;
-    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
-    margin: 0 auto;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border: 2px solid;
+    margin: 10px;
+    text-align: center;
+    line-height: 40px;
     border-radius: 0 0 10px 10px;
+    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
 }
 
 .seat-thuong {
-    padding: 15px;
-    height: 20px;
-    width: 20px;
-    margin: 0 auto;
-    border-radius: 0 0 10px 10px;
-    background-color: white;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
     border: 2px solid;
+    margin: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0 0 10px 10px;
 }
 
 .seat-vip {
-    padding: 15px;
-    height: 20px;
-    width: 45px;
-    margin: 0 auto;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    border: 2px solid;
+    margin: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 0 0 10px 10px;
     background-color: #faa61a;
-    box-shadow: 1px 1px 20px #faa61a;
-    border-radius: 0 0 35% 35%;
 }
 
 .creen {
     padding: 20px 0;
-    margin: 0 350px 120px 350px;
+    margin: 0 100px 130px 200px;
     border-radius: 100% 100% 0 0;
     border: 1px solid black;
     box-shadow: 0px 9px 20px #7c6363;
 }
 
 .seat-movie {
-    margin: 0px 0 0 300px;
+    margin: 0px 100px 0 193px;
 }
 
-.seat-item {
-    height: 30px;
-    width: 30px;
-    margin: 10px;
-    border-radius: 0 0 10px 10px;
+.seat-slc {
+    height: 40px;
+    width: 40px;
     border: 2px solid;
-}
-
-.hang-1 {
-    height: 30px;
-    width: 30px;
     margin: 10px;
+    text-align: center;
+    line-height: 40px;
     border-radius: 0 0 10px 10px;
-    padding-left: 7px;
-}
-
-.cot-1 {
-    height: 30px;
-    width: 30px;
-    margin: 10px;
-}
-
-/* .seat-item:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-} */
-
-.slc {
     background-color: green;
-}
-
-.seat-couple {
-    height: 30px;
-    width: 60px;
-    background-color: #faa61a;
-    border-radius: 0 0 35% 35%;
-    margin: 15px 25px;
-    border: 2px solid black;
-}
-
-.line-3,
-.line-9 {
-    background-image: none;
-    border: none;
-    background-color: white;
-}
-
-.dnt-slc {
-    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
-    /* cursor: none; */
-    border: 2px solid black;
 }

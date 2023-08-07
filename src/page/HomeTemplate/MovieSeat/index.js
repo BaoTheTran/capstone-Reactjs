@@ -1,13 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { movieSeatReducer } from './duck/reducer'
+import { actMovieSeat } from './duck/action'
+import { useParams } from 'react-router-dom'
 
 export default function MovieSeat(props) {
-  const [state, getId] = useState({
-    id: '',
-  })
-  const slcSeat = (e) => {
-    document.getElementById(e.target.id).style.backgroundColor = 'green'
+  const dispatch = useDispatch()
+  const params = useParams()
+  const data = useSelector(state => state.movieSeatReducer.data)
+  const loading = useSelector(state => state.movieSeatReducer.loading)
+
+  const [state, setState] = useState([])
+
+  const layMaGhe = (maGhe) => {
   }
+
+  useEffect(() => {
+    dispatch(actMovieSeat(params.maLichChieu))
+    setState(item => (data))
+  }, [])
+
+  console.log(state);
   return (
     <div className='row '>
       <div className='col-md-8 '>
@@ -24,118 +38,30 @@ export default function MovieSeat(props) {
           </li>
           <li className='pr-3 '>
             <div className='seat-vip'></div>
-            <p>Couple</p>
+            <p>Vip</p>
           </li>
         </ul>
         <hr />
         <div className='movie-seat'>
           <div className='creen'></div>
-          <div className='seat-movie d-flex'>
-            <div className='hang-1 '></div>
-            <div className='hang-1 '>1</div>
-            <div className='hang-1 '>3</div>
-            <div className='hang-1 '></div>
-            <div className='hang-1'>4</div>
-            <div className='hang-1'>5</div>
-            <div className='hang-1'>6</div>
-            <div className='hang-1'>7</div>
-            <div className='hang-1 '></div>
-            <div className='hang-1'>9</div>
-            <div className='hang-1 '>10</div>
-            <div className='hang-1 '>11</div>
-          </div>
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>A</div>
-            <button className='seat-item' onClick={(event) => slcSeat(event)} id='A1' >A1</button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item' style={{ backgroundColor: 'green' }} ></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
+          <div className='seat-movie row'>
+            {data?.danhSachGhe?.map((ghe, index) => {
+              const classGheVip = ghe.loaiGhe === 'Vip' ? 'seat-vip' : '';
+              const classDaDat = ghe.daDat === true ? 'seat-none' : 'seat-thuong'
+              return <>
+                <button
+                  key={index}
+                  // style={{ backgroundColor: `${state.chon === false ? '' : 'green'}` }}
+                  onClick={() => layMaGhe(ghe.maGhe)}
+                  disabled={ghe.daDat}
+                  className={`${classGheVip} ${classDaDat}`}
+                >{ghe.daDat === true ? '' : ghe.tenGhe}</button>
+              </>
+            })}
           </div>
 
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>B</div>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-          </div>
 
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>C</div>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-          </div>
-
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>D</div>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-          </div>
-
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>E</div>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-          </div>
-
-          <div className='seat-movie d-flex'>
-            <div className='cot-1'>F</div>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-3' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item dnt-slc' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item line-9' disabled='true'></button>
-            <button className='seat-item'></button>
-            <button className='seat-item'></button>
-          </div>
-
-          <div className='seat-movie d-flex justify-content-center ml-auto'>
-            <button className='seat-couple dnt-slc' disabled='true'></button>
-            <button className='seat-couple'></button>
-            <button className='seat-couple'></button>
-          </div>
         </div>
-
       </div>
       <h2 className='col-md-4 text-center'>Tổng tiền</h2>
     </div>

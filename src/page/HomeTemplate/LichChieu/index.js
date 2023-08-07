@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { actLichChieu } from './duck/action'
-import RenderLichChieu from './renderLichChieu'
 import { Link, useParams } from 'react-router-dom'
 import './style.css'
 import { Tabs } from 'antd';
 import TabPane from 'antd/es/tabs/TabPane'
-import moment, { months } from 'moment/moment'
+import moment from 'moment/moment'
 import _ from 'lodash'
+import { actMovieSeat } from '../MovieSeat/duck/action'
 
 export default function LichChieu() {
   const dispatch = useDispatch()
@@ -18,6 +18,7 @@ export default function LichChieu() {
 
   useEffect(() => {
     dispatch(actLichChieu())
+
   }, [])
 
   const renderHeThongRap = () => {
@@ -32,7 +33,7 @@ export default function LichChieu() {
               </div>
             } key={index}>
               <Tabs tabPosition={tabPosition}>
-                {cumRap?.danhSachPhim.slice(0,6).map((phim, index) => {
+                {cumRap?.danhSachPhim.slice(0, 6).map((phim, index) => {
                   return <TabPane tab={
                     <div>
                       <img style={{ height: '50%', width: '100%', maxWidth: '50px', display: 'inline-block' }} src={phim.hinhAnh} />
@@ -41,8 +42,16 @@ export default function LichChieu() {
                   } key={index}>
                     <div className='row'>
                       {phim?.lstLichChieuTheoPhim.slice(0, 6).map((xuatChieu, index) => {
-                        return <Link className='col-md-5 calendar-item' to='/movie-seat'>
-                          {moment(xuatChieu.NgayChieuGioChieu).format('DD/MM/YYYY')} - {moment(xuatChieu.NgayChieuGioChieu).format('HH:MM A')}
+                        return <Link
+                          key={index}
+                          className='col-md-4 mx-3 calendar-item'
+                          // data-toggle={localStorage.getItem('user') ? '' : "modal"} 
+                          // data-target="#myModalLogin" 
+                          to={`/movie-seat/${xuatChieu.maLichChieu}`}
+                        >
+                          <div >
+                            {moment(xuatChieu.ngayChieuGioChieu).format('DD/MM/YYYY')} - {moment(xuatChieu.ngayChieuGioChieu).format('HH:MM A')}
+                          </div>
                         </Link>
                       })}
                     </div>
@@ -56,7 +65,6 @@ export default function LichChieu() {
     })
   }
   if (loadding) return <div>loadding ...</div>
-  console.log(data);
   return (
     <>
       <div>

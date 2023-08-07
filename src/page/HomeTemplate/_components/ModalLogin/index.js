@@ -26,7 +26,7 @@ export default class ModalLogin extends Component {
       </div>
       <div className="form-group p-3">
         <label className='font-weight-bold text-warning'>Mật khẩu</label>
-        <input type="text" className='form-control'
+        <input type="password" className='form-control'
         name ="matKhau"/>
       </div>
       </div>
