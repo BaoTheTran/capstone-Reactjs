@@ -4,60 +4,69 @@
     text-align: center;
 }
 
-.seat-none {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    border: 2px solid;
-    margin: 10px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 0 0 10px 10px;
-    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
-}
-
-.seat-thuong {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    border: 2px solid;
-    margin: 10px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 0 0 10px 10px;
-}
-
-.seat-vip {
-    height: 40px;
-    width: 40px;
-    cursor: pointer;
-    border: 2px solid;
-    margin: 10px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 0 0 10px 10px;
-    background-color: #faa61a;
-}
-
 .creen {
     padding: 20px 0;
-    margin: 0 100px 130px 200px;
+    margin: 0 113px 130px 230px;
     border-radius: 100% 100% 0 0;
     border: 1px solid black;
     box-shadow: 0px 9px 20px #7c6363;
+    width: 100%;
+    max-width: 850px;
 }
 
-.seat-movie {
-    margin: 0px 100px 0 193px;
+.seat {
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 0 0 10px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 0 10px 0;
+}
+
+.seat-none {
+    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
+}
+
+.seat-vip {
+    background-color: #faa61a ;
 }
 
 .seat-slc {
-    height: 40px;
-    width: 40px;
-    border: 2px solid;
-    margin: 10px;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 0 0 10px 10px;
     background-color: green;
+}
+
+.seat-my-choose {
+    background-color: pink !important;
+    background-image: none;
+    box-shadow: 1px 1px 10px rgba(238, 65, 186, 0.4);
+}
+
+.seat-people-choose{
+    background-color: rgb(220, 233, 35) !important;
+    background-image: none;
+    box-shadow: 1px 1px 10px rgba(220, 223, 35, 0.4);
+}
+
+.seat-movie {
+    margin: 0px 100px 0 170px;
+}
+
+.thong-tin-ve {
+    font-size: 20px;
+}
+
+.ant-tabs-tab-btn {
+    margin-left: 20px;
+}
+
+.ant-card {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+button,
+button:focus-visible,
+button:focus {
+    border: none !important
 }

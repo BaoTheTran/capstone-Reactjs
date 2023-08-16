@@ -12,11 +12,11 @@ class HomePage extends Component {
     this.props.fetchListMovieHomepage();
   }
 
-  // renderListMovie = () => {
-  //   const { data, loading } = this.props;
-  //   if (loading) return <div>loading...</div>
-  //   return data?.map((movie) => <MovieItem key={movie.maPhim} movie={movie} />);
-  // }
+  renderListMovie = () => {
+    const { data, loading } = this.props;
+    if (loading) return <div>loading...</div>
+    return data?.map((movie) => <MovieItem key={movie.maPhim} movie={movie} />);
+  }
 
 
   render() {
@@ -60,7 +60,7 @@ class HomePage extends Component {
         <section id='dangChieu'>
           <OwlCarousel items={4} margin={8} autoplay={true} className="owl-theme"
             loop >
-            {/* {this.renderListMovie()} */}
+            {this.renderListMovie()}
           </OwlCarousel>
         </section>
       </div>
@@ -68,12 +68,12 @@ class HomePage extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     loading: state.listMovieHompageReducer.loading,
-//     data: state.listMovieHompageReducer.data,
-//   }
-// };
+const mapStateToProps = (state) => {
+  return {
+    loading: state.listMovieHompageReducer.loading,
+    data: state.listMovieHompageReducer.data,
+  }
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -83,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

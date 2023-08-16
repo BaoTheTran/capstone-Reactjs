@@ -8,18 +8,19 @@ import TabPane from 'antd/es/tabs/TabPane'
 import moment from 'moment/moment'
 import _ from 'lodash'
 import { actMovieSeat } from '../MovieSeat/duck/action'
+import Loading from '../_components/Loading/loading'
 
 export default function LichChieu() {
   const dispatch = useDispatch()
   const params = useParams()
-  const data = useSelector((state) => state.lichChieuReducer.data)
-  const loadding = useSelector((state) => state.lichChieuReducer.loadding)
+  const { data, loading } = useSelector((state) => state.lichChieuReducer)
   const [tabPosition, setTabPosition] = useState('left');
 
   useEffect(() => {
     dispatch(actLichChieu())
-
   }, [])
+
+  if (loading) return <Loading />
 
   const renderHeThongRap = () => {
     return data?.map((heThongRap, index) => {
@@ -64,7 +65,7 @@ export default function LichChieu() {
       </TabPane>
     })
   }
-  if (loadding) return <div>loadding ...</div>
+  if (loading) return <Loading />
   return (
     <>
       <div>
