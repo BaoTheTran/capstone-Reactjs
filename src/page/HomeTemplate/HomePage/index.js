@@ -1,49 +1,41 @@
 import React, { Component } from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { Carousel } from 'antd';
 import MovieItem from './MovieItems';
+import CarouselHome from './Carousel';
 import { connect } from 'react-redux';
-import { actFetchListMovieHomepage } from './duck/actions';
+import {actFetchListMovieHomepage} from "../HomePage/MovieItems/duck/actions";
+import Slider from "react-slick";
 
 
 class HomePage extends Component {
-
+  
+ 
   componentDidMount(){
     this.props.fetchListMovieHomepage();
+    
   }
 
   renderListMovie=()=>{
     const {data,loading} = this.props;
-    if(loading) return <div>loading...</div>
+    console.log(data);
+    if(loading) return <div>loading...</div>;
     return data?.map((movie)=><MovieItem key={movie.maPhim} movie={movie} />);
+    
   }
 
-
   render() {
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 5,
+      slidesToScroll: 3,
+    };
     console.log(this.props.data);
     return (
     <div>
-      <section className='carousel'>
-        <OwlCarousel
-        items={1} margin={8} autoplay ={true} className="owl-theme"  
-        loop  
-        nav 
-        >
-          <div className='item'>
-            <img src="http://ddcinema.vn/Areas/Admin/Content/Fileuploads/images/slider/MI7.jpg" alt="" />
-          </div>
-          <div className='item'>
-            <img src="http://ddcinema.vn/Areas/Admin/Content/Fileuploads/images/slider/INSI.jpg" alt="" />
-          </div>
-          <div className='item'>
-            <img src="http://ddcinema.vn/Areas/Admin/Content/Fileuploads/images/slider/Member%20card.jpg" alt="" />
-          </div>
-          <div className='item'>
-            <img src="http://ddcinema.vn/Areas/Admin/Content/Fileuploads/images/slider/BANNER%20CONAN.jpg" alt="" />
-          </div>
-        </OwlCarousel>
-      </section>
+      <CarouselHome/>
+      
       <section id="slider-movie">
           <div className='heading'>
             <div className='row'>
@@ -59,12 +51,12 @@ class HomePage extends Component {
           </div>
       </section>
       <section id='dangChieu'>
-      {this.renderListMovie()}
-          <OwlCarousel items={4} margin={8} autoplay ={true} className="owl-theme"  
-        loop >
-              
-          </OwlCarousel>
+          <Slider {...settings}>
+            {this.renderListMovie()}
+          </Slider>
       </section>
+     
+               
     </div>  
     )
   }

@@ -12,7 +12,7 @@ export default class HomeTemplate extends Component {
         <NavBar/>
         {/* dinh tuyen vao cac component con. */}
         <Outlet/>
-        {/* <Footer/> */}
+        <Footer/>
       </div>
     )
   }

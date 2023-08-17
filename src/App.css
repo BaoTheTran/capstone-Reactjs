@@ -159,36 +159,6 @@ ul{
 /* HOMEPAGE__CAROUSEL  */
 
 
-.owl-next {
-  position: absolute !important;
-  right: 0px !important;
-  top: 30%;
-  background-color: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 0 !important; 
-}
-
-.owl-next span{
-  font-size: 80px;
-  color: grey;
-}
-
-.owl-prev {
-  position: absolute !important;
-  left: 0px !important;
-  top: 30%;
-  background-color: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-}
-
-.owl-prev span{
-  font-size: 80px;
-  color: grey;
-}
-
 .item img{
   display: block;
   height: 700px;
@@ -196,12 +166,7 @@ ul{
   line-height: 1;
 }
 
-.owl-dots{
-  position: absolute;
-  z-index: 15;
-  bottom: 2%;
-  right: 50%;
-}
+
 
 /* SLIDER MOVIE  */
 
@@ -253,6 +218,29 @@ ul{
   border-bottom: 2px solid #fdb813;
 }
 
+.item-movie img{
+    width: 283px;
+    height: 420px;
+    margin-top: 30px;
+    border-radius: 20px;
+}
+
+#dangChieu{
+  background-color: #060c12;
+}
+
+.film__overlay{
+  cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(0deg,#000,transparent);
+    opacity: 0;
+    transition: all .2s;
+}
+
+
 /* MODAL REGISTER  */
 
 .control-label {
@@ -285,136 +273,3 @@ ul{
 }
 
 
-/* SEAT  */
-
-.Apppp {
-  text-align: center;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-
-
-.Movies {
-  margin-bottom: 24px;
-}
-
-.Movies select {
-  appearance: none;
-  background: white;
-  font-size: 14px;
-  margin-left: 12px;
-  border-radius: 4px;
-  padding: 6px 24px;
-}
-
-.ShowCase {
-  margin: 0 0 48px;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  background: #3b3b3b;
-  padding: 12px;
-  border-radius: 4px;
-  color: #7e7e7e;
-}
-
-.ShowCase li {
-  margin: 0 12px;
-}
-
-.Cinema {
-  margin-bottom: 18px;
-  perspective: 400px;
-
-  display: grid;
-  place-items: center;
-  grid-gap: 24px;
-}
-
-.Cinema .screen {
-  height: 70px;
-  background: white;
-  width: 100%;
-  transform: rotateX(-30deg) scale(1.1);
-  box-shadow: 0 3px 10px 2px;
-}
-
-.Cinema .seats {
-  display: grid;
-  grid-gap: 6px;
-  grid-template-columns: repeat(8, min-content);
-  align-items: center;
-}
-
-.Cinema .seats .seat:nth-of-type(8n + 2) {
-  margin-right: 12px;
-}
-
-.Cinema .seats .seat:nth-of-type(8n + 6) {
-  margin-right: 12px;
-}
-
-.Cinema .seats .seat:not(.occupied):hover,
-.Cinema .seats .seat:not(.occupied):focus {
-  cursor: pointer;
-  background: #c1eac5;
-  transform: scale(1.2);
-}
-
-.Cinema .seats .seat.selected::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 2px;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  background: transparent;
-  border: 1px solid #7bc47f;
-  animation: show-off 0.8s;
-  visibility: hidden;
-}
-
-@keyframes show-off {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  100% {
-    transform: scale(3);
-    opacity: 0;
-  }
-}
-
-.seat {
-  display: inline-block;
-  background: #626262;
-  width: 50px;
-  height: 30px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  transition: transform 0.3s ease-in-out;
-
-  position: relative;
-  top: 1px;
-}
-
-.seat.selected {
-  background: #7bc47f !important;
-}
-
-.seat.occupied {
-  background: #cfcfcf;
-}
-
-.info .count {
-  color: #7bc47f;
-}
-
-.info .total {
-  color: #7bc47f;
-}

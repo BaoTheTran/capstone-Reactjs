@@ -1,10 +1,20 @@
-import api from "../../../../utils/apiUtils";
+import api from "../../../../../utils/apiUtils";
 import { LIST_MOVIE_HOMEPAGE_REQUEST,LIST_MOVIE_HOMEPAGE_SUCCESS,LIST_MOVIE_HOMEPAGE_FAIL } from "./constants";
 
-export const actFetchListMovieHomepage =()=>{
+export const actFetchListMovieHomepage =(tenPhim='')=>{
     return(dispatch)=>{
         dispatch(actListMovieHomepageRequest());
-        api.get("QuanLyPhim/LayDanhSachPhim?maNhom=GP04")
+        if(tenPhim.trim() !== ''){
+            api.get(`QuanLyPhim/LayDanhSachPhim?maNhom=GP04&tenPhim=${tenPhim}`)
+            .then((res)=>{
+                if(res.data.statusCode=== 200){
+                    dispatch(actListMovieHomepageSuccess(res.data.content));
+                }
+            })
+            .catch((error)=>{
+                dispatch(actListMovieHomepageFail(error))
+            })
+        }else( api.get("QuanLyPhim/LayDanhSachPhim?maNhom=GP04")
         .then((res)=>{
             if(res.data.statusCode=== 200){
                 dispatch(actListMovieHomepageSuccess(res.data.content));
@@ -13,8 +23,11 @@ export const actFetchListMovieHomepage =()=>{
         .catch((error)=>{
             dispatch(actListMovieHomepageFail(error))
         })
+        )
+       
     }
 } 
+ 
 
 const actListMovieHomepageRequest =()=>{
     return{

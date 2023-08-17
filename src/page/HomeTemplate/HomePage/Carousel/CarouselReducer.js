@@ -1,28 +1,26 @@
-import { LIST_MOVIE_HOMEPAGE_REQUEST,LIST_MOVIE_HOMEPAGE_SUCCESS,LIST_MOVIE_HOMEPAGE_FAIL } from "./constants";
-
-const initialState = {
+import { CAROUSEL_FAIL ,CAROUSEL_REQUEST,CAROUSEL_SUCCESS} from "./CarouselConstant";
+const stateDefault={
     loading: false,
-     data:null,
-     error: null,
+    data: null,
+    error: null,
 };
 
-const listMovieHompageReducer = (state=initialState , action)=>{
+export const carouselReducer = (state = stateDefault, action)=>{
     switch (action.type) {
-        case LIST_MOVIE_HOMEPAGE_REQUEST:{
+        case CAROUSEL_REQUEST:{
             state.loading =true;
             state.data = null;
             state.error = null;
             return {...state};
         }
-
-        case LIST_MOVIE_HOMEPAGE_SUCCESS:{
+        case CAROUSEL_SUCCESS:{
             state.loading =false;
             state.data = action.payload;
             state.error = null;
             return {...state};
         }
 
-        case LIST_MOVIE_HOMEPAGE_FAIL:{
+        case CAROUSEL_FAIL:{
             state.loading =false;
             state.data = null;
             state.error = action.payload;
@@ -30,8 +28,6 @@ const listMovieHompageReducer = (state=initialState , action)=>{
         }
 
         default:
-            return {...state}
+          return {...state}
     }
-};
-
-export default listMovieHompageReducer;
+}

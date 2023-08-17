@@ -15,7 +15,7 @@ const routes = [
             { path: "lien-he", element: lazy(() => import("../page/HomeTemplate/LienHe")) },
             { path: 'lich-chieu/:id', element: lazy(() => import('../page/HomeTemplate/detailMovie')) },
             { path: "movie-seat", element: lazy(() => import("../page/HomeTemplate/MovieSeat/index")) },
-            // { path: "tin-tuc", element: lazy(() => import("../page/HomeTemplate/tinTuc")) },
+            { path: "profile", element: lazy(() => import("../page/HomeTemplate/Profile")) },
         ]
     },
 
@@ -24,7 +24,12 @@ const routes = [
         element: lazy(() => import("../page/AdminTemplate")),
         nested: [
             { path: "dashboard", element: lazy(() => import("../page/AdminTemplate/DashBoard")) },
+            { path: "manage-user", element: lazy(() => import("../page/AdminTemplate/User"))},
             { path: "add-user", element: lazy(() => import("../page/AdminTemplate/AddUser")) },
+            { path: "edit-user/:id", element: lazy(() => import("../page/AdminTemplate/EditUser")) },
+            { path: "add-film", element: lazy(() => import("../page/AdminTemplate/AddFilm")) },
+            { path: "edit-film/:id", element: lazy(() => import("../page/AdminTemplate/EditFilm")) },
+            { path: "add-show-time/:id", element: lazy(() => import("../page/AdminTemplate/AddShowTime")) },
         ],
     },
     { path: "auth", element: lazy(() => import("../page/AdminTemplate/AuthPage")) },
