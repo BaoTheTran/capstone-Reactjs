@@ -4,17 +4,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { actFetchDetailMovie } from './duck/action'
 import Chitiet from './Chitiet'
+import Loading from '../_components/Loading/loading'
 
 export default function DetailMovie() {
   const params = useParams()
   const dispatch = useDispatch()
-  const loading = useSelector((state) => state.detailMovieReducer.loading)
-  const data = useSelector((state) => state.detailMovieReducer.data)
+  const { loading, data } = useSelector((state) => state.detailMovieReducer)
 
   useEffect(() => {
     dispatch(actFetchDetailMovie(params.id))
   }, {})
-  if (loading) return <div>Loading ... </div>
+  if (loading) return <Loading />
   return (
     <>
       <div>

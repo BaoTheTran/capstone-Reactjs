@@ -4,6 +4,7 @@ import './style.css'
 import DangChieu from './dangchieu'
 import { actListMovie } from './duck/action'
 import { useNavigate } from 'react-router-dom'
+import Loading from '../_components/Loading/loading'
 
 export default function ListMovie() {
   const dispatch = useDispatch()
@@ -13,7 +14,7 @@ export default function ListMovie() {
   useEffect(() => {
     dispatch(actListMovie(navigate))
   }, [])
-  if (loading) return <div>loading...</div>
+  if (loading) return <Loading />
   return (
     <div>
       <DangChieu />

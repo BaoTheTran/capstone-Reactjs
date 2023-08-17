@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 import {actFetchListMovieHomepage} from "../HomePage/MovieItems/duck/actions";
 import Slider from "react-slick";
 
-
 class HomePage extends Component {
   
  

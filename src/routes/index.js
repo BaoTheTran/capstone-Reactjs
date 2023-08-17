@@ -16,6 +16,8 @@ const routes = [
             { path: 'lich-chieu/:id', element: lazy(() => import('../page/HomeTemplate/detailMovie')) },
             { path: "movie-seat", element: lazy(() => import("../page/HomeTemplate/MovieSeat/index")) },
             { path: "profile", element: lazy(() => import("../page/HomeTemplate/Profile")) },
+            { path: "movie-seat/:maLichChieu", element: lazy(() => import("../page/HomeTemplate/MovieSeat/index")) },
+            // { path: "tin-tuc", element: lazy(() => import("../page/HomeTemplate/tinTuc")) },
         ]
     },
 

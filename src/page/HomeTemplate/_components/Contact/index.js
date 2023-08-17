@@ -6,10 +6,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actLogOutCustomer } from '../../../AdminTemplate/AuthPage/duck/actions';
 
 export default function Contact() {
- const userLogin = useSelector((state)=>state.adminReducer.data);
+//  const userLogin = useSelector((state)=>state.adminReducer.data);
+const userLogin = JSON.parse(localStorage.getItem('USER_CUSTOMER'))
+
  const dispatch = useDispatch();
  const navigate = useNavigate();
-
+console.log(userLogin);
 
   return (
     <div id="top_header">

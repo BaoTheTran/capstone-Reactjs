@@ -1,97 +1,72 @@
 .header-seat {
     justify-content: space-around !important;
     margin: 0 350px;
-}
-
-.seat-none {
-    padding: 15px;
-    height: 20px;
-    width: 20px;
-    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
-    margin: 0 auto;
-    border-radius: 0 0 10px 10px;
-}
-
-.seat-thuong {
-    padding: 15px;
-    height: 20px;
-    width: 20px;
-    margin: 0 auto;
-    border-radius: 0 0 10px 10px;
-    background-color: white;
-    border: 2px solid;
-}
-
-.seat-vip {
-    padding: 15px;
-    height: 20px;
-    width: 45px;
-    margin: 0 auto;
-    background-color: #faa61a;
-    box-shadow: 1px 1px 20px #faa61a;
-    border-radius: 0 0 35% 35%;
+    text-align: center;
 }
 
 .creen {
     padding: 20px 0;
-    margin: 0 350px 120px 350px;
+    margin: 0 113px 130px 230px;
     border-radius: 100% 100% 0 0;
     border: 1px solid black;
     box-shadow: 0px 9px 20px #7c6363;
+    width: 100%;
+    max-width: 850px;
 }
 
-.seat-movie {
-    margin: 0px 0 0 300px;
-}
-
-.seat-item {
-    height: 30px;
-    width: 30px;
+.seat {
+    height: 40px;
+    width: 40px;
     margin: 10px;
+    text-align: center;
+    line-height: 35px;
     border-radius: 0 0 10px 10px;
-    border: 2px solid;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 0 10px 0;
 }
 
-.hang-1 {
-    height: 30px;
-    width: 30px;
-    margin: 10px;
-    border-radius: 0 0 10px 10px;
-    padding-left: 7px;
+.seat-none {
+    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
 }
 
-.cot-1 {
-    height: 30px;
-    width: 30px;
-    margin: 10px;
+.seat-vip {
+    background-color: #faa61a ;
 }
 
-/* .seat-item:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-} */
-
-.slc {
+.seat-slc {
     background-color: green;
 }
 
-.seat-couple {
-    height: 30px;
-    width: 60px;
-    background-color: #faa61a;
-    border-radius: 0 0 35% 35%;
-    margin: 15px 25px;
-    border: 2px solid black;
-}
-
-.line-3,
-.line-9 {
+.seat-my-choose {
+    background-color: pink !important;
     background-image: none;
-    border: none;
-    background-color: white;
+    box-shadow: 1px 1px 10px rgba(238, 65, 186, 0.4);
 }
 
-.dnt-slc {
-    background-image: linear-gradient(140deg, grey 0%, grey 44%, #cbbdbd 45%, #cbbdbd 55%, grey 56%, grey 100%);
-    /* cursor: none; */
-    border: 2px solid black;
+.seat-people-choose{
+    background-color: rgb(220, 233, 35) !important;
+    background-image: none;
+    box-shadow: 1px 1px 10px rgba(220, 223, 35, 0.4);
+}
+
+.seat-movie {
+    margin: 0px 100px 0 170px;
+}
+
+.thong-tin-ve {
+    font-size: 20px;
+}
+
+.ant-tabs-tab-btn {
+    margin-left: 20px;
+}
+
+.ant-card {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2) !important;
+}
+
+button,
+button:focus-visible,
+button:focus {
+    border: none !important
 }
