@@ -24,7 +24,7 @@ const actFail = (error) => {
 export const actLichChieu = () => {
     return (dispatch) => {
         dispatch(actRequest())
-        api.get(`QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP03`)
+        api.get(`QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP04`)
             .then((result) => {
                 if (result.data.statusCode === 200) {
                     dispatch(actSuccess(result.data.content))

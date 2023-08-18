@@ -6,7 +6,8 @@
     height: 100%;
     width: 90%;
     position: absolute;
-    max-height: 600px;
+    max-height: 700px;
+    min-height: 700px;
 }
 
 .img-lichchieu {

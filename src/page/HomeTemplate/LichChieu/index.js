@@ -21,7 +21,7 @@ export default function LichChieu() {
   }, [])
 
   if (loading) return <Loading />
-
+console.log(data);
   const renderHeThongRap = () => {
     return data?.map((heThongRap, index) => {
       return <TabPane tab={<img style={{ height: '50%', width: '100%', maxWidth: '50px' }} src={heThongRap.logo} />} key={index}>

@@ -1,5 +1,6 @@
 import { LIST_USER_REQUEST, LIST_USER_SUCCESS, LIST_USER_FAIL, DELETE_USER,EDIT_USER,SUBMIT_USER,SEARCH_USER } from "./contants";
 import api from "../../../../utils/apiUtils";
+import { toast } from 'react-toastify';
 
 export const actFetchListUser = ()=>{
     return(dispatch)=>{
@@ -45,8 +46,7 @@ export const actFetchUpdateUser = (user,navigate)=>{
     return async (dispatch)=>{
         await api.post("QuanLyNguoiDung/CapNhatThongTinNguoiDung", user)
         .then((res)=>{
-            alert('Cập nhật thành công!')
-            console.log(res.data);
+            toast.success('Cập nhật thành công!')
             if(res.data.statusCode === 200){
                 dispatch(actClearModal())
                 dispatch(actFetchListUser());

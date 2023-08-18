@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { actAddUser } from './duck/action';
 
@@ -27,7 +27,7 @@ export default function AddUser() {
   const handleSubmit = (event)=>{
     event.preventDefault();
     console.log(state);
-    dispatch(actAddUser(state));
+      dispatch(actAddUser(state));
   }
 
 

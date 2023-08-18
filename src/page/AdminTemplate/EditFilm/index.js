@@ -28,7 +28,6 @@ export default function EditFilm() {
   const dispatch = useDispatch();
   const params = useParams();
   const dataEdit =  useSelector((state)=>state.addFilmReducer.filmEdit);
-  console.log(dataEdit);
 
   useEffect(()=>{
     dispatch(actFetchEditFilm(params.id));

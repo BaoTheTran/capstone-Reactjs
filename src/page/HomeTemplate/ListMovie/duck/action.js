@@ -24,7 +24,7 @@ const actFail = (error) => {
 export const actListMovie = (navigate) => {
     return (dispatch) => {
         dispatch(actRequest())
-        api.get('QuanLyPhim/LayDanhSachPhim?maNhom=GP03')
+        api.get('QuanLyPhim/LayDanhSachPhim?maNhom=GP04')
             .then((result) => {
                 if (result.data.statusCode === 200) {
                     dispatch(actSuccess(result.data.content))

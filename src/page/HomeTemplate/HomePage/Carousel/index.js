@@ -1,53 +1,51 @@
 import React, { Component } from 'react'
-import { Carousel } from 'antd';
+import { Carousel } from 'antd';  
 import { actFetchCarousel } from './CarouselAction';
 import { connect } from 'react-redux';
-
+import Loading from '../../_components/Loading/loading';
 
 class CarouselHome extends Component {
-  
 
-  componentDidMount(){
+  componentDidMount() {
     this.props.fetchCarousel();
-    
   }
 
-  renderImg = ()=>{
-    const {data,loading} = this.props;
-    console.log(data);
-    if(loading) return <div>loading...</div>
-    return data?.map((item)=>{
+  renderImg = () => {
+    const { data, loading } = this.props;
+    console.log('data',data);
+    if (loading) return <Loading />
+
+    return data?.map((item) => {
       return (<div key={item.maBanner} className='item'>
-        <img src={item.hinhAnh} alt="123" />
+        <img style={{height:'100%', width:'100%'}} src={item.hinhAnh} alt="" />
       </div>)
     })
   }
 
-
   render() {
     return (
       <section className='carousel' >
-      <Carousel autoplay>
-        {this.renderImg()}
-      </Carousel>
-    </section>
+        <Carousel autoplay style={{height:'100%', width:'100%'}}>
+          {this.renderImg()}
+        </Carousel>
+      </section>
     )
   }
 }
 
-const mapStateToProps =(state)=>{
-  return{
-    loading :state.carouselReducer.loading,
+const mapStateToProps = (state) => {
+  return {
+    loading: state.carouselReducer.loading,
     data: state.carouselReducer.data,
   }
 };
 
-const mapDispatchToProps=(dispatch)=>{
-  return{
-    fetchCarousel:()=>{
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchCarousel: () => {
       dispatch(actFetchCarousel());
     },
   }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (CarouselHome);
+export default connect(mapStateToProps, mapDispatchToProps)(CarouselHome);
