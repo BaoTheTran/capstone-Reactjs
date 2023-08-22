@@ -7,6 +7,7 @@ import { actFetchListMovieHomepage } from "../HomePage/MovieItems/duck/actions";
 import Slider from "react-slick";
 import Loading from '../_components/Loading/loading';
 
+
 class HomePage extends Component {
 
 
@@ -37,11 +38,10 @@ class HomePage extends Component {
         <section id="slider-movie">
           <div className='heading'>
             <div className='row'>
-              <div className="col-lg-6 col-md-6 col-xs-5"><img src="http://ddcinema.vn/Content/img/slogan-2.png" /></div>
+              <div className="col-lg-6 col-md-6 col-xs-5"><img src={require("../../../img/logo.png")} /></div>
               <div className="col-lg-6 col-md-6 col-xs-7">
                 <ul>
                   <li className="dangchieu_li slide_active">Đang chiếu</li>
-                  <li className="sapchieu_li">Sắp chiếu</li>
                 </ul>
               </div>
             </div>
