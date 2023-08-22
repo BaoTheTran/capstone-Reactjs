@@ -1,11 +1,11 @@
 import { LIST_USER_REQUEST, LIST_USER_SUCCESS, LIST_USER_FAIL, DELETE_USER,EDIT_USER,SUBMIT_USER,SEARCH_USER } from "./contants";
-import api from "../../../../utils/apiUtils";
+import apiAdmin from "../../../../utils/apiAdmin";
 import { toast } from 'react-toastify';
 
 export const actFetchListUser = ()=>{
     return(dispatch)=>{
         dispatch(actListUserRequest());
-        api.get("QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01")
+        apiAdmin.get("QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01")
         .then((res)=>{
             if(res.data.statusCode=== 200){
                 dispatch(actListUserSuccess(res.data.content));
@@ -19,7 +19,7 @@ export const actFetchListUser = ()=>{
 
 export const actDeleteUser =(taiKhoan)=>{
     return(dispatch)=>{
-        api.delete(`QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
+        apiAdmin.delete(`QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
         .then((res)=>{
             alert('Xóa user thành công!');
             dispatch( actFetchListUser());
@@ -32,7 +32,7 @@ export const actDeleteUser =(taiKhoan)=>{
 
 export const actFetchEditUser =  (taiKhoan)=>{
     return(dispatch)=>{
-        api.get(`QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${taiKhoan}`)
+        apiAdmin.get(`QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01&tuKhoa=${taiKhoan}`)
         .then((res)=>{
             dispatch(actEdit(res.data.content[0]))
         })
@@ -44,7 +44,7 @@ export const actFetchEditUser =  (taiKhoan)=>{
 
 export const actFetchUpdateUser = (user,navigate)=>{
     return async (dispatch)=>{
-        await api.post("QuanLyNguoiDung/CapNhatThongTinNguoiDung", user)
+        await apiAdmin.post("QuanLyNguoiDung/CapNhatThongTinNguoiDung", user)
         .then((res)=>{
             toast.success('Cập nhật thành công!')
             if(res.data.statusCode === 200){

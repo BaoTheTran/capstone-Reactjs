@@ -1,13 +1,13 @@
 import { ADMIN_REQUEST, ADMIN_SUCCESS, ADMIN_FAIL, ADMIN_LOGOUT } from "./constant";
 import { NavLink, useParams } from "react-router-dom";
-import api from "../../../../utils/apiUtils";
+import apiAdmin from "../../../../utils/apiAdmin";
 import { history } from '../../../../App'
 import { toast } from 'react-toastify';
 
 export const actFetchAdmin = (user, navigate) => {
     return (dispatch) => {
         dispatch(actAdminRequest());
-        api.post("QuanLyNguoiDung/DangNhap", user)
+        apiAdmin.post("QuanLyNguoiDung/DangNhap", user)
             .then((res) => {
                 if (res.data.statusCode === 200) {
                     const user = res.data.content;
@@ -46,7 +46,7 @@ export const actFetchCustomer = (user) => {
 
     return (dispatch) => {
         dispatch(actAdminRequest());
-        api.post("QuanLyNguoiDung/DangNhap", user)
+        apiAdmin.post("QuanLyNguoiDung/DangNhap", user)
             .then((res) => {
                 if (res.data.statusCode === 200) {
                     const user = res.data.content;

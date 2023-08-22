@@ -1,12 +1,12 @@
 import * as ActionTypes from "./contants";
-import api from "../../../../utils/apiUtils";
+import apiAdmin from "../../../../utils/apiAdmin";
 import { toast } from 'react-toastify';
 
 
 export const actAddUser =(user)=>{
     return(dispatch)=>{
         dispatch(actAddUserRequest);
-        api.post("QuanLyNguoiDung/ThemNguoiDung",user)
+        apiAdmin.post("QuanLyNguoiDung/ThemNguoiDung",user)
         .then((res)=>{
             toast.success('Thêm user thành công!')
             console.log(res.data);
@@ -21,7 +21,7 @@ export const actAddUser =(user)=>{
 export const actKhachHangDangKy =(user)=>{
     return(dispatch)=>{
         dispatch(actAddUserRequest);
-        api.post("QuanLyNguoiDung/DangKy",user)
+        apiAdmin.post("QuanLyNguoiDung/DangKy",user)
         .then((res)=>{
             toast.success('Đăng ký thành công!')
 

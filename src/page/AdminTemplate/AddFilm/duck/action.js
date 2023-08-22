@@ -1,12 +1,12 @@
 import { ADD_FILM_REQUEST, ADD_FILM_SUCCESS, ADD_FILM_FAIL, EDIT_FILM, DELETE_FILM } from "./constant";
-import api from "../../../../utils/apiUtils";
+import apiAdmin from "../../../../utils/apiAdmin";
 import { actFetchListMovieHomepage } from "../../../HomeTemplate/HomePage/MovieItems/duck/actions";
 import { toast } from 'react-toastify';
 
 export const actAddFilm = (formData) => {
     return (dispatch) => {
         dispatch(actAddFilmRequest());
-        api.post("QuanLyPhim/ThemPhimUploadHinh", formData)
+        apiAdmin.post("QuanLyPhim/ThemPhimUploadHinh", formData)
             .then((res) => {
                 dispatch(actAddFilmSuccess(formData))
                 toast.success('Thêm phim thành công!!')
@@ -19,7 +19,7 @@ export const actAddFilm = (formData) => {
 
 export const actFetchEditFilm = (maPhim) => {
     return (dispatch) => {
-        api.get(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
+        apiAdmin.get(`QuanLyPhim/LayThongTinPhim?MaPhim=${maPhim}`)
             .then((res) => {
                 dispatch(actEditFilm(res.data.content))
                 // console.log(res.data.content);
@@ -32,7 +32,7 @@ export const actFetchEditFilm = (maPhim) => {
 
 export const actFetchUpdateFilm = (formData) => {
     return (dispatch) => {
-        api.post("QuanLyPhim/CapNhatPhimUpload", formData)
+        apiAdmin.post("QuanLyPhim/CapNhatPhimUpload", formData)
             .then((res) => {
                 toast.success('Cập nhật thành công!!')
 
@@ -46,7 +46,7 @@ export const actFetchUpdateFilm = (formData) => {
 
 export const actDeleteFilm = (maPhim) => {
     return (dispatch) => {
-        api.delete(`QuanLyPhim/XoaPhim?MaPhim=${maPhim}`)
+        apiAdmin.delete(`QuanLyPhim/XoaPhim?MaPhim=${maPhim}`)
             .then((res) => {
                 toast.success('Xóa phim thành công!!')
                 dispatch(actFetchListMovieHomepage())

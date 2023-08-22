@@ -1,11 +1,11 @@
 import { ADD_SHOWTIME_REQUEST, ADD_SHOWTIME__SUCCESS, ADD_SHOWTIME__FAIL, GET_CUMRAP } from "./constant";
-import api from "../../../../utils/apiUtils";
+import apiAdmin from "../../../../utils/apiAdmin";
 import { toast } from 'react-toastify';
 
 export const actHeThongRap = () => {
     return (dispatch) => {
         dispatch(actAddShowtimeRequest());
-        api.get("QuanLyRap/LayThongTinHeThongRap")
+        apiAdmin.get("QuanLyRap/LayThongTinHeThongRap")
             .then((res) => {
                 dispatch(actAddShowtimeSuccess(res.data.content))
                 // console.log(res.data.content);
@@ -19,7 +19,7 @@ export const actHeThongRap = () => {
 
 export const actMaHeThong = (maHeThongRap) => {
     return (dispatch) => {
-        api.get(`QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`)
+        apiAdmin.get(`QuanLyRap/LayThongTinCumRapTheoHeThong?maHeThongRap=${maHeThongRap}`)
             .then((res) => {
                 dispatch(actGetCumRap(res.data.content))
                 // console.log(res.data.content);
@@ -32,7 +32,7 @@ export const actMaHeThong = (maHeThongRap) => {
 
 export const taoLichChieu = (data, navigate) => {
     return (dispatch) => {
-        api.post("QuanLyDatVe/TaoLichChieu", data)
+        apiAdmin.post("QuanLyDatVe/TaoLichChieu", data)
             .then((res) => {
                 console.log('success');
                 if (res.data.statusCode === 200) {
