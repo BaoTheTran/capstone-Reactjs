@@ -45,7 +45,7 @@ export default function ModalRegister() {
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 content-title">
               <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 img-fluid">
-                <img src="http://ddcinema.vn/Content/Img/logo.png" />
+                <img src={require("../../../../img/logo.png")} />
               </div>
               <h3 style={{color: '#fdb813'}} className='mt-3 mb-2'>Trải Nghiệm Rạp Phim Hiện Đại Chất Lượng Ngay Tại DDCINEMA</h3>
               <p style={{color: '#a9a9a9'}} className='mt-3'>Đăng ký trở thành thành viên chính thức để nhận được nhiều ưu đãi từ DDCINEMA ngay các bạn ơi!</p>

@@ -33,6 +33,10 @@ export default function AuthPage() {
     return <Navigate replace to="/admin/dashboard" />
   }
 
+  if(localStorage.getItem("USER_CUSTOMER")){
+    return <Navigate replace to="/" />
+  }
+
   return (
     <div >
     <div className="modal-dialog">
