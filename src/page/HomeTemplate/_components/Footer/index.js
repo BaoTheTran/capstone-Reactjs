@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {NavLink} from "react-router-dom";
+import {} from "../../../../img/logo.png"
 
 export default class Footer extends Component {
   render() {
@@ -11,7 +12,7 @@ export default class Footer extends Component {
               <div className='col-lg-4 col-md-4 col-sm-4 col-xs-4 footer_item footer_item_img'>
                 <div className="navbar-brand">
                   <NavLink to="/">
-                  <img src="http://ddcinema.vn/Content/Img/logo.png"/>
+                  <img src={require("../../../../img/logo.png")}/>
                   </NavLink>
                 </div>
               </div>
@@ -22,9 +23,9 @@ export default class Footer extends Component {
                     <a href=""><i className="fab fa-youtube"></i></a>
                   </div>
                   <div className='hotLine'>
-                    <NavLink to="/lien-he">
+                  
                     <p><i className="fa fa-hand-point-right"></i>Liên hệ với chúng tôi</p>
-                    </NavLink>
+        
                   </div>
                   <div className='hotLine'>
                         <a href="">

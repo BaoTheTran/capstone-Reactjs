@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from "react-router-dom";
 
+
 export default class NavBar extends Component {
   render() {
     return (
@@ -9,7 +10,7 @@ export default class NavBar extends Component {
           <div className='container'>
           <div className="navbar-brand">
             <NavLink  to="/">
-            <img src="http://ddcinema.vn/Content/Img/logo.png"/>
+            <img src={require("../../../../img/logo.png")}/>
             </NavLink>
           </div>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -31,9 +32,6 @@ export default class NavBar extends Component {
             </li>
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/uu-dai">Ưu Đãi</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/lien-he">Liên Hệ</NavLink>
             </li>
             
           </ul>

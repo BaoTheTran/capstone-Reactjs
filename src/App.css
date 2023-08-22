@@ -31,7 +31,7 @@ ul {
 /* HEADER  */
 #top_header {
   border-bottom: 2px solid rgba(100, 92, 92, 0.56);
-  background: url(../img/bg.png);
+  background: url(../src/img/bg.png);
 }
 
 #top_header ul li a {
@@ -76,7 +76,7 @@ ul {
 
 .navbar-default {
   border: none !important;
-  background: url(../img/bg.png);
+  background: url(../src/img/bg.png);
   border-radius: 0px !important;
 }
 
@@ -99,7 +99,7 @@ ul {
 
 /* FOOTER  */
 #footer {
-  background: url(../img/bg.png);
+  background: url(../src/img/bg.png);
 }
 
 .footer_title {
@@ -174,7 +174,7 @@ ul {
   background-color: #060c12;
 }
 
-.item img,
+
 .owl-next {
   position: relative !important;
   right: 0px !important;
