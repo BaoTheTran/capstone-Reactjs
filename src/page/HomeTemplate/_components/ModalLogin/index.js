@@ -7,7 +7,7 @@ export default function ModalLogin() {
   const dispatch = useDispatch();
 
   const error = useSelector((state) => state.adminReducer.error);
-  const navigate = useNavigate();
+
 
   const [state, setState] = useState({
     taiKhoan: "",
@@ -24,9 +24,11 @@ export default function ModalLogin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(actFetchCustomer(state, navigate))
+    dispatch(actFetchCustomer(state))
     console.log(state);
   };
+
+  
 
 
 
@@ -79,13 +81,3 @@ export default function ModalLogin() {
     </div>
   )
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     dispatchLogin: (data) => {
-//       dispatch(actLogin(data));
-//     }
-//   }
-// };
-
-// export default connect(null,mapDispatchToProps)(ModalLogin)

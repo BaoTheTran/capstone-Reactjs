@@ -42,7 +42,7 @@ export const actLogOut = (navigate) => {
     }
 };
 
-export const actFetchCustomer = (user, navigate) => {
+export const actFetchCustomer = (user) => {
 
     return (dispatch) => {
         dispatch(actAdminRequest());
