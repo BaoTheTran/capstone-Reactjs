@@ -21,15 +21,40 @@ class HomePage extends Component {
     if (loading) return <Loading />;
     return data?.map((movie) => <MovieItem key={movie.maPhim} movie={movie} />);
 
-  }
+  };
+
 
   render() {
     const settings = {
+      arrows: true,
       dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 5,
-      slidesToScroll: 3,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            arrows: true,
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            arrows: true,
+            slidesToShow: 1,
+          },
+        },
+      ],
     };
     return (
       <div>

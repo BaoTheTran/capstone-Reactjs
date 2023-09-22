@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import { Suspense } from 'react';
-import renderRoutes from './routes';
+import renderRoutes from './routes';  
 import { createBrowserHistory } from 'history';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

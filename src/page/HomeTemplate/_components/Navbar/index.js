@@ -13,10 +13,10 @@ export default class NavBar extends Component {
             <img src={require("../../../../img/logo.png")}/>
             </NavLink>
           </div>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span className="navbar-toggler-icon" />
+        <button className="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+          Menu
         </button>
-        <div className="collapse navbar-collapse navbar-menu" id="collapsibleNavbar ">
+        <div className=" navbar-collapse navbar-menu" id="collapsibleNavbar ">
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? "my-active nav-link" : "nav-link"} to="/">Trang Chủ</NavLink>

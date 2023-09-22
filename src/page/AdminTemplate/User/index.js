@@ -12,7 +12,7 @@ export default function UserList() {
 
     useEffect(()=>{
         dispatch(actFetchListUser())
-    },[])
+    },[]) 
     
     const renderListUser=()=>{
         return listUser?.map((item,index)=>{

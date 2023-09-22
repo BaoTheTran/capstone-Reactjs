@@ -9,7 +9,7 @@ export const actAddFilm = (formData) => {
         apiAdmin.post("QuanLyPhim/ThemPhimUploadHinh", formData)
             .then((res) => {
                 dispatch(actAddFilmSuccess(formData))
-                toast.success('Thêm phim thành công!!')
+                    .success('Thêm phim thành công!!')
             })
             .catch((error) => {
                 dispatch(actAddFilmFail(error))

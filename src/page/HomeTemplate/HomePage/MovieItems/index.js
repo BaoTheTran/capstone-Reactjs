@@ -7,7 +7,7 @@ export default class MovieItem extends Component {
     return (
       <div className='item-movie' >
         <h3 className='title-movie-item text-center text-warning'>{movie.tenPhim}</h3>
-        <img src={movie.hinhAnh} className='img-fluid' />
+        <img src={movie.hinhAnh} className='img-fluid pl-4' />
         {/* <div className='film__overlay'></div> */}
         <div className='text-center p-3'>
           <Link className='btn btn-info' to={`/lich-chieu/${movie.maPhim}`} >CHI TIẾT</Link>
